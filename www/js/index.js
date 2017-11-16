@@ -7,12 +7,38 @@ $(document).on("pagecreate", "#pageone", function() {
 
 function submitText() {
 	
-    var answer = !Math.round(Math.random())
+    var words = [
+    "zero secret",    
+    "one good",
+    "two good",
+    "three good",
+    "four good",
+    "five neutral",
+    "six bad",
+    "seven bad",
+    "eight bad",
+    "nine bad",
+    "ten bad"    
+    ];
+    
+    var answer = Math.floor(Math.random()* 10)
     
     $("#answer").text(answer);
 
-    
+    $("#fortune").text(randomAnswer);
   
+
+    function randomAnswer() {
+        var result = words[answer()] + " " + words[answer() + 10];
+  return result;
+    
+    };
+    
+    
+    
+    
+    
+    
     if (answer == true){
            console.log("true");
         navigator.notification.beep(1);
